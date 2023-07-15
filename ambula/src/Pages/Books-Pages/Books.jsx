@@ -24,7 +24,7 @@ const Books = () => {
     if (product.books.length   === 0) {
       dispatch(getBooks())
     }
-  }, [dispatch, product.books])
+  }, [dispatch, product.books,cart.cart])
 
 
 
