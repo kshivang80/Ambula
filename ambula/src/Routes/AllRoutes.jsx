@@ -7,6 +7,7 @@ import Todo from "../Pages/Todo-Pages/Todo"
 import Home from "../Pages/Home"
 import Books from '../Pages/Books-Pages/Books';
 import CartPage from '../Pages/Books-Pages/CartPage';
+import Movies from '../Pages/Movies';
 
 
 const AllRoutes = () => {
@@ -17,6 +18,8 @@ const AllRoutes = () => {
             <Route path="/todo" element={<Todo/>} />
             <Route path="/books" element={<Books />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/movies" element={<Movies />} />
+
         </Routes>
     </div>
   )

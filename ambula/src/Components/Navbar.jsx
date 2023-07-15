@@ -61,9 +61,9 @@ export default function Navbar() {
                                 </Button>
                             </Link>
 
-                            <Link to="/">
+                            <Link to="/movies">
                                 <Button variant={'solid'} colorScheme='messenger' size={'md'} mr={4}>
-                                    fetch Data
+                                    Movie
                                 </Button>
                             </Link>
 
@@ -119,8 +119,8 @@ export default function Navbar() {
                             <Link to="/books">
                                 Product
                             </Link>
-                            <Link to="/">
-                                Fetch Data
+                            <Link to="/movies">
+                               Movies
                             </Link>
                         </Stack>
                     </Box>
