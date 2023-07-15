@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { deleteTodos, getTodos } from '../../Redux/todo/todoaction';
 import Edittodos from './Edittodos';
 import AddTodo from './AddTodo';
+import Loader from '../../Components/Loader';
 
 const Todo = () => {
     // delete
@@ -57,11 +58,28 @@ const Todo = () => {
 
 
     return (
-        <div style={{ width: "100%", height: "800px", border: "1px solid red" }}>
+        <>
+        {todo.todos.length === 0 || todo.isLoading === true ? (
+            <>
+              <SimpleGrid
+                columns={{ base: 1, sm: 1, md: 1, lg: 2 }}
+                border="2px solid green"
+
+
+              >
+                <Loader cardShow={true} />
+                <Loader cardShow={true} />
+                <Loader cardShow={true} />
+                <Loader cardShow={true} />
+              </SimpleGrid>
+
+            </>
+          ) :(
+            <div style={{ width: "100%", height: "800px",  }}>
             <Text mt="30px" fontSize={"30px"}> Todo</Text>
 
-            <Box  width={["100%","100%","100%","90%"]} m="auto" mt="30px" h="auto" border="1px solid blue" display={"flex"} justifyContent={"flex-end"}>
-                <Box w={["100%", "100%", "50%", "80%"]} h="auto" border="1px solid red" display="flex" justifyContent={["center", "flex-end", "space-between", "flex-end"]}>
+            <Box  width={["100%","100%","100%","90%"]} m="auto" mt="30px" h="auto"  display={"flex"} justifyContent={"flex-end"} boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                <Box w={["100%", "100%", "50%", "80%"]} h="auto"  display="flex" justifyContent={["center", "flex-end", "space-between", "flex-end"]}>
 
                     <SimpleGrid padding="10px" columns={{ base: 2, sm: 2, md: 2, lg: 4}} gap="20px">
                     <Button colorScheme='green' onClick={() => setAddModalOpen(true)} >Add Todos</Button>
@@ -75,8 +93,8 @@ const Todo = () => {
 
 
             </Box>
-
-            <Box overflowX="auto"  border="1px solid pink" width={["100%","100%","100%","90%"]} m="auto" mt="50px">
+           
+            <Box overflowX="auto"  width={["100%","100%","100%","90%"]} m="auto" mt="50px" borderRadius={"30px"} boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px;">
                 <Table variant="unstyled" size='lg'>
                     <Thead>
                         <Tr>
@@ -128,9 +146,17 @@ const Todo = () => {
                    
                 />
             </Box>
+            <Box h="100px">
+
+            </Box>
+
 
 
         </div>
+
+          )}
+        
+        </>
     )
 }
 

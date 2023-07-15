@@ -38,9 +38,12 @@ export default function Navbar() {
                     />
                     <HStack spacing={8} alignItems={'center'}>
                         <Box fontSize={"18px"}>
-                            <Button color={"black"} variant={'solid'} colorScheme={'white'} size={'md'} mr={4}>
-                                Home
-                            </Button>
+                            <Link to="/">
+                                <Button color={"black"} variant={'solid'} colorScheme={'white'} size={'md'} mr={4}>
+                                    Home
+                                </Button>
+                            </Link>
+
                         </Box>
                         <HStack
                             as={'nav'}
@@ -91,7 +94,7 @@ export default function Navbar() {
                                 <Avatar
                                     size={'md'}
                                     src={
-                                        'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
+                                        'https://avatars.githubusercontent.com/u/103144321?v=4'
                                     }
                                 />
                             </MenuButton>
