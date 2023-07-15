@@ -32,20 +32,23 @@ const CartPage = () => {
 
 
   useEffect(() => {
-    if (cart.cart.length === 0) {
-      dispatch(getCart())
+    // Fetch the cart items only if the cart data is not available and not loading
+    if (cart.cart.length === 0 && !cart.isLoading) {
+      dispatch(getCart());
     }
 
     // Initialize quantities when cart changes
-    const initialQuantities = {};
-    cart.cart.forEach((item) => {
-      initialQuantities[item.id] = 1; // Assuming initial quantity is 1 for all items
-    });
-    setQuantities(initialQuantities);
+    if (cart.cart.length > 0) {
+      const initialQuantities = {};
+      cart.cart.forEach((item) => {
+        initialQuantities[item.id] = 1; // Assuming initial quantity is 1 for all items
+      });
+      setQuantities(initialQuantities);
+    }
+  }, [dispatch, cart]);
 
+  // ...
 
-
-  }, [dispatch,])
 
   //const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
 
@@ -70,6 +73,7 @@ const CartPage = () => {
 
   // Function to handle increasing quantity
   const handleIncreaseQuantity = (id) => {
+    
     setQuantities((prevQuantities) => ({
       ...prevQuantities,
       [id]: prevQuantities[id] + 1,
@@ -78,6 +82,9 @@ const CartPage = () => {
 
   // Function to handle decreasing quantity
   const handleDecreaseQuantity = (id) => {
+    if (quantities[id] === 1) {
+      return; // If it's 1, don't further decrease and exit the function
+    }
     setQuantities((prevQuantities) => ({
       ...prevQuantities,
       [id]: prevQuantities[id] - 1,
