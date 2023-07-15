@@ -18,7 +18,7 @@ import {
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getSingleTodos, getTodos, updateTodos } from "../Redux/todo/todoaction";
+import { getSingleTodos, getTodos, updateTodos } from "../../Redux/todo/todoaction";
 
 const initialState = {
     title: "",

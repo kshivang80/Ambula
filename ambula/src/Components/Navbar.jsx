@@ -39,7 +39,7 @@ export default function Navbar() {
                     <HStack spacing={8} alignItems={'center'}>
                         <Box fontSize={"18px"}>
                             <Button color={"black"} variant={'solid'} colorScheme={'white'} size={'md'} mr={4}>
-                                  Home
+                                Home
                             </Button>
                         </Box>
                         <HStack
@@ -52,7 +52,7 @@ export default function Navbar() {
                                     Todo
                                 </Button>
                             </Link>
-                            <Link to="/">
+                            <Link to="/books">
                                 <Button variant={'solid'} colorScheme='messenger' size={'md'} mr={4}>
                                     Product
                                 </Button>
@@ -70,14 +70,17 @@ export default function Navbar() {
                         </HStack>
                     </HStack>
                     <Flex alignItems={'center'}>
-                        <Button
-                            variant={'solid'}
-                            colorScheme={'teal'}
-                            size={'md'}
-                            mr={4}
-                            leftIcon={<AiOutlineShoppingCart />}>
-                            Cart
-                        </Button>
+                        <Link to="/cart">
+                            <Button
+                                variant={'solid'}
+                                colorScheme={'teal'}
+                                size={'md'}
+                                mr={4}
+                                leftIcon={<AiOutlineShoppingCart />}>
+                                Cart
+                            </Button>
+                        </Link>
+
                         <Menu>
                             <MenuButton
                                 as={Button}
@@ -110,7 +113,7 @@ export default function Navbar() {
                             <Link to="/todo">
                                 Todo
                             </Link>
-                            <Link to="/">
+                            <Link to="/books">
                                 Product
                             </Link>
                             <Link to="/">

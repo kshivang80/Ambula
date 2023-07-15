@@ -3,13 +3,16 @@ import { Box, Text, Table, Thead, Tbody, Tr, Th, Td, Button, useToast, SimpleGri
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { deleteTodos, getTodos } from '../Redux/todo/todoaction';
+import { deleteTodos, getTodos } from '../../Redux/todo/todoaction';
 import Edittodos from './Edittodos';
+import AddTodo from './AddTodo';
 
 const Todo = () => {
     // delete
     // 
     const [editModalOpen, setEditModalOpen] = useState(false);
+    const [addModalOpen, setAddModalOpen] = useState(false);
+
     const [editItemId, setEditItemId] = useState(""); // New state to store the item id
     const toast = useToast()
     const dispatch = useDispatch()
@@ -61,7 +64,7 @@ const Todo = () => {
                 <Box w={["100%", "100%", "50%", "80%"]} h="auto" border="1px solid red" display="flex" justifyContent={["center", "flex-end", "space-between", "flex-end"]}>
 
                     <SimpleGrid padding="10px" columns={{ base: 2, sm: 2, md: 2, lg: 4}} gap="20px">
-                    <Button colorScheme='green' >Add Todos</Button>
+                    <Button colorScheme='green' onClick={() => setAddModalOpen(true)} >Add Todos</Button>
                         <Button colorScheme='green'>Total Todos : {totalCount}</Button>
                         <Button colorScheme='blue'  >Running Todo : {runningCount}</Button>
                         <Button colorScheme='purple'>Completed Todo : {doneCount}</Button>
@@ -117,6 +120,12 @@ const Todo = () => {
                     editModalOpen={editModalOpen}
                     setEditModalOpen={setEditModalOpen}
                     itemId={editItemId} // Pass the item id as a prop
+                />
+
+                <AddTodo
+                 addModalOpen={addModalOpen}
+                 setAddModalOpen={(e) => setAddModalOpen(e)}
+                   
                 />
             </Box>
 

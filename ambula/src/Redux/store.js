@@ -1,13 +1,14 @@
 import {applyMiddleware, combineReducers, legacy_createStore} from "redux";
 import thunk from "redux-thunk"
 import { todoreducer } from "./todo/todoreducer";
-//import { productreducer } from "./product/todoreducer";
+import { bookreducer } from "./product/bookreducer";
+import { cartreducer } from "./Cart/cartreducer";
 
 
 const rootReducer = combineReducers({
     todo : todoreducer,
-   // product:productreducer,
-   
+    product:bookreducer,
+    cart:cartreducer
     
   
 });

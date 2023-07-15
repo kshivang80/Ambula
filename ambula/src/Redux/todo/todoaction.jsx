@@ -112,7 +112,7 @@ const deleteTodosError=()=>{
 const getTodos=()=>(dispatch)=>{
    dispatch(getTodosRequest())
 
-   return axios.get("http://localhost:8080/todos")
+   return axios.get("https://book-api-epaa.onrender.com/todos")
      .then((r)=>{
         dispatch(getTodosSucess(r.data))
         console.log(r.data)
@@ -131,7 +131,7 @@ const getTodos=()=>(dispatch)=>{
 const postTodos=(payload)=>(dispatch)=>{
     dispatch(postTodosRequest())
  
-    return axios.post(" http://localhost:8080/todos",payload)
+    return axios.post(" https://book-api-epaa.onrender.com/todos",payload)
       .then((r)=>{
          dispatch(postTodosSucess(r.data))
          console.log(r.data)
@@ -149,7 +149,7 @@ const postTodos=(payload)=>(dispatch)=>{
   const getSingleTodos = (id) =>  (dispatch) =>{
       
    return axios
-        .get(`http://localhost:8080/todos/${id}`)
+        .get(`https://book-api-epaa.onrender.com/todos/${id}`)
         .then((res) => {
           console.log(res.data);
           dispatch(getSingleTodosRequest(res.data));
@@ -164,7 +164,7 @@ const postTodos=(payload)=>(dispatch)=>{
 
  const updateTodos=(Todos,id)=>(dispatch)=>{
         
-   return axios.patch(` http://localhost:8080/todos/${id}`,Todos)
+   return axios.patch(` https://book-api-epaa.onrender.com/todos/${id}`,Todos)
     .then((res)=>{
         console.log(res.data);
         dispatch(updateTodosRequest())
@@ -183,7 +183,7 @@ const postTodos=(payload)=>(dispatch)=>{
  const deleteTodos = (id) => (dispatch) => {
     dispatch(deleteTodosRequest());
     return axios
-    .delete(` http://localhost:8080/todos/${id}`)
+    .delete(` https://book-api-epaa.onrender.com/todos/${id}`)
     .then((r)=>{
       dispatch(deleteTodosSucess(r))
     })

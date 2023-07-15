@@ -1,9 +1,12 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom';
-import Todo from '../Pages/Todo';
-import AddTodo from '../Pages/AddTodo';
-import Edittodos from '../Pages/Edittodos';
-import Home from '../Pages/Home';
+
+import AddTodo from '../Pages/Todo-Pages/AddTodo';
+import Edittodos from '../Pages/Todo-Pages/Edittodos';
+import Todo from "../Pages/Todo-Pages/Todo"
+import Home from "../Pages/Home"
+import Books from '../Pages/Books-Pages/Books';
+import CartPage from '../Pages/Books-Pages/CartPage';
 
 
 const AllRoutes = () => {
@@ -11,9 +14,9 @@ const AllRoutes = () => {
     <div>
          <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/todo" element={<Todo />} />
-            <Route path="/addtodo" element={<AddTodo />} />
-            <Route path='/edittodo/:id' element={<Edittodos/>}></Route>
+            <Route path="/todo" element={<Todo/>} />
+            <Route path="/books" element={<Books />} />
+            <Route path="/cart" element={<CartPage />} />
         </Routes>
     </div>
   )
