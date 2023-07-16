@@ -5,11 +5,11 @@ const Home = () => {
   return (
     <div style={{ height: "auto", width: "100%" }}>
       <Box mt="20px">
-      <Text color='#25D366' as='u'   fontFamily={"sans-serif"} fontSize={"45px"} fontWeight={"600"} >Welcome To Our App</Text>
+      <Text color='#25D366' as='u'   fontFamily={"sans-serif"} fontSize={{ base: "30px", sm: "30px", md:"40px", lg: "45px" }} fontWeight={"600"} >Welcome To Our App</Text>
 
       </Box>
       <Box w="93%" m="auto" mt="40px">
-        <SimpleGrid mt="30px" columns={{ base: 1, sm: 1, md: 2, lg: 2 }} gap="30px">
+        <SimpleGrid mt="30px" columns={{ base: 1, sm: 1, md: 1, lg: 2 }} gap="30px">
           <Box  h="450px" borderRadius={"20px"} boxShadow ="rgba(0, 0, 0, 0.24) 0px 3px 8px">
             <Box  h="100%" width="100%" >
               <Image borderRadius={"20px"} w="100%" h="100%" src="https://ceblog.s3.amazonaws.com/wp-content/uploads/2018/08/28183850/home_post_2.gif" />
