@@ -8,6 +8,8 @@ import Home from "../Pages/Home"
 import Books from '../Pages/Books-Pages/Books';
 import CartPage from '../Pages/Books-Pages/CartPage';
 import Movies from '../Pages/Movies';
+import About from '../Pages/About';
+import ContactUs from '../Pages/ContactUs';
 
 
 const AllRoutes = () => {
@@ -19,6 +21,8 @@ const AllRoutes = () => {
             <Route path="/books" element={<Books />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/movies" element={<Movies />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<ContactUs />} />
 
         </Routes>
     </div>
