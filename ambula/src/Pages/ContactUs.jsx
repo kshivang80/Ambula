@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import emailjs from '@emailjs/browser';
 import styled from 'styled-components'
-import PhoneIcon from '@mui/icons-material/Phone';
-import EmailIcon from '@mui/icons-material/Email';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { Box, Input } from '@chakra-ui/react';
